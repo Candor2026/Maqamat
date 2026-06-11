@@ -1,0 +1,286 @@
+:root {
+  --parchment: #F5EFE3;
+  --parchment-deep: #EFE6D4;
+  --charcoal: #2B2B2B;
+  --indigo: #1F2A44;
+  --faded: #6B6357;
+  --rule: rgba(43, 43, 43, 0.22);
+}
+
+@font-face {
+  font-family: 'Amiri';
+  src: url('assets/fonts/amiri-arabic-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--parchment);
+  color: var(--charcoal);
+  font-family: Georgia, 'Times New Roman', serif;
+  line-height: 1.65;
+  font-size: 17px;
+}
+
+.arabic { font-family: 'Amiri', serif; }
+
+/* ---------- Navigation ---------- */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 84px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.2rem;
+  align-items: center;
+  border-right: 1px solid var(--rule);
+  background: var(--parchment);
+  z-index: 10;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--faded);
+  font-family: 'Amiri', serif;
+  font-size: 1.35rem;
+  opacity: 0.55;
+  transition: opacity 0.3s, color 0.3s;
+  writing-mode: horizontal-tb;
+  text-align: center;
+  line-height: 1.2;
+}
+
+nav a small {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 0.15rem;
+}
+
+nav a.active { opacity: 1; color: var(--indigo); }
+nav a.home-link { font-size: 0.62rem; letter-spacing: 0.2em; font-family: Georgia, serif; text-transform: uppercase; }
+
+main { margin-left: 84px; }
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem clamp(1.5rem, 8vw, 7rem);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--rule);
+}
+
+.hero .substrate {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hero .substrate img {
+  width: min(48vw, 860px);
+  opacity: 0.15;
+}
+
+.hero h1 {
+  font-family: 'Amiri', serif;
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  font-weight: 400;
+  color: var(--indigo);
+  line-height: 1.15;
+}
+
+.hero .subtitle {
+  font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+  margin-top: 0.6rem;
+  letter-spacing: 0.06em;
+}
+
+.hero .byline {
+  margin-top: 2.4rem;
+  color: var(--faded);
+  font-size: 0.92rem;
+  max-width: 34rem;
+}
+
+/* ---------- Sections ---------- */
+section { border-bottom: 1px solid var(--rule); }
+
+.prose {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 5rem clamp(1.5rem, 4vw, 3rem);
+}
+
+.prose h2 {
+  font-weight: 400;
+  font-size: 1.6rem;
+  margin-bottom: 1.4rem;
+  color: var(--indigo);
+}
+
+.prose p + p { margin-top: 1rem; }
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  color: var(--faded);
+  margin-bottom: 0.8rem;
+}
+
+/* ---------- Entry panels ---------- */
+.entry-open {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: clamp(2rem, 6vw, 5rem) clamp(1.5rem, 5vw, 5rem);
+}
+
+.entry-open .substrate {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 58%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.entry-open .substrate img {
+  width: min(50vw, 820px);
+  opacity: 0.18;
+}
+
+.entry-open .opener {
+  position: relative;
+  max-width: 36rem;
+}
+
+.entry-open .entry-no {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--faded);
+}
+
+.entry-open h2 {
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--indigo);
+  margin: 0.4rem 0 0.2rem;
+}
+
+.entry-open h2 .translit { font-style: italic; font-size: 0.55em; color: var(--faded); }
+
+.entry-open .axis {
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.9rem;
+}
+
+.entry-open .phase {
+  font-size: 0.82rem;
+  color: var(--faded);
+}
+
+/* ---------- Entry body ---------- */
+.entry-body { max-width: 44rem; margin: 0 auto; padding: 0 clamp(1.5rem, 4vw, 3rem) 5rem; }
+
+.entry-body h3 {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--indigo);
+  margin: 2.8rem 0 0.8rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--rule);
+}
+
+.entry-body h3:first-child { border-top: none; padding-top: 3rem; }
+
+.forthcoming {
+  color: var(--faded);
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+/* ---------- References ---------- */
+.refs ul { list-style: none; }
+.refs li {
+  padding-left: 2rem;
+  text-indent: -2rem;
+  margin-bottom: 0.7rem;
+  font-size: 0.92rem;
+}
+
+footer {
+  padding: 3rem clamp(1.5rem, 8vw, 7rem);
+  color: var(--faded);
+  font-size: 0.82rem;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 720px) {
+  .hero .substrate, .entry-open .substrate { width: 100%; }
+  .hero .substrate img, .entry-open .substrate img { width: 86vw; opacity: 0.12; }
+  nav {
+    height: auto;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.3rem;
+    padding: 0.55rem 0.5rem;
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+  }
+  nav a { font-size: 1.05rem; }
+  nav a small { display: none; }
+  main { margin-left: 0; padding-top: 3.2rem; }
+  .entry-open { align-items: center; }
+}
+
+/* ---------- Entry prefaces ---------- */
+.preface {
+  padding: 3rem 0 0 1.4rem;
+  border-left: 2px solid rgba(31, 42, 68, 0.35);
+  color: var(--faded);
+  font-size: 0.97rem;
+  max-width: 40rem;
+}
+
+.entry-body .preface + h3 { margin-top: 3rem; }
+
+/* ---------- Reference page link ---------- */
+.ref-link {
+  color: var(--indigo);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.92rem;
+}
+
+.ref-link:hover { border-bottom-color: var(--indigo); }
+
+footer p + p { margin-top: 0.8rem; }
