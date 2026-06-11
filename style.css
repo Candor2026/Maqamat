@@ -85,7 +85,10 @@ main { margin-left: 84px; }
 
 .hero .substrate {
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 60%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,8 +96,8 @@ main { margin-left: 84px; }
 }
 
 .hero .substrate img {
-  width: min(72vw, 900px);
-  opacity: 0.07;
+  width: min(48vw, 860px);
+  opacity: 0.15;
 }
 
 .hero h1 {
@@ -123,7 +126,8 @@ section { border-bottom: 1px solid var(--rule); }
 
 .prose {
   max-width: 44rem;
-  padding: 5rem clamp(1.5rem, 8vw, 7rem);
+  margin: 0 auto;
+  padding: 5rem clamp(1.5rem, 4vw, 3rem);
 }
 
 .prose h2 {
@@ -148,14 +152,17 @@ section { border-bottom: 1px solid var(--rule); }
   min-height: 100vh;
   position: relative;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   overflow: hidden;
-  padding: clamp(2rem, 6vw, 5rem) clamp(1.5rem, 8vw, 7rem);
+  padding: clamp(2rem, 6vw, 5rem) clamp(1.5rem, 5vw, 5rem);
 }
 
 .entry-open .substrate {
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 58%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -163,8 +170,8 @@ section { border-bottom: 1px solid var(--rule); }
 }
 
 .entry-open .substrate img {
-  width: min(78vw, 1000px);
-  opacity: 0.09;
+  width: min(50vw, 820px);
+  opacity: 0.18;
 }
 
 .entry-open .opener {
@@ -200,7 +207,7 @@ section { border-bottom: 1px solid var(--rule); }
 }
 
 /* ---------- Entry body ---------- */
-.entry-body { max-width: 44rem; padding: 0 clamp(1.5rem, 8vw, 7rem) 5rem; }
+.entry-body { max-width: 44rem; margin: 0 auto; padding: 0 clamp(1.5rem, 4vw, 3rem) 5rem; }
 
 .entry-body h3 {
   font-weight: 400;
@@ -237,6 +244,8 @@ footer {
 
 /* ---------- Mobile ---------- */
 @media (max-width: 720px) {
+  .hero .substrate, .entry-open .substrate { width: 100%; }
+  .hero .substrate img, .entry-open .substrate img { width: 86vw; opacity: 0.12; }
   nav {
     height: auto;
     width: 100%;
