@@ -284,3 +284,127 @@ footer {
 .ref-link:hover { border-bottom-color: var(--indigo); }
 
 footer p + p { margin-top: 0.8rem; }
+
+/* ---------- Audio buttons ---------- */
+.audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  color: var(--faded);
+  padding: 0.35rem 0.7rem 0.35rem 0.5rem;
+  border-radius: 2rem;
+  margin-top: 1.1rem;
+  font-family: Georgia, serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  transition: opacity 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.audio-btn:hover { opacity: 1; border-color: var(--rule); }
+
+.audio-btn svg { width: 1.2em; height: 1.2em; flex-shrink: 0; }
+
+.audio-btn .wave { transition: opacity 0.3s; opacity: 0.2; }
+
+.audio-btn.playing { color: var(--indigo); opacity: 1; border-color: rgba(31,42,68,0.3); }
+
+.audio-btn.playing .wave { opacity: 1; }
+
+.audio-btn:disabled { cursor: default; }
+
+.hero .audio-btn { align-self: flex-start; }
+
+/* ---------- Darwish closing ---------- */
+.closing {
+  min-height: 100vh;
+  background: var(--parchment-deep);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  padding: 5rem clamp(1.5rem, 8vw, 7rem);
+}
+
+.closing-inner { max-width: 44rem; width: 100%; margin: 0 auto; }
+
+.darwish-title {
+  font-family: 'Amiri', serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--indigo);
+  margin-bottom: 0.25rem;
+}
+
+.darwish-credit {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--faded);
+  margin-bottom: 2rem;
+}
+
+.darwish-intro {
+  font-size: 0.97rem;
+  color: var(--faded);
+  max-width: 38rem;
+  margin-bottom: 0.6rem;
+}
+
+.poem-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+  align-items: start;
+}
+
+.poem-arabic {
+  font-family: 'Amiri', serif;
+  font-size: 1.15rem;
+  line-height: 2;
+  direction: rtl;
+  text-align: right;
+  border-right: 2px solid rgba(31,42,68,0.3);
+  padding-right: 1.4rem;
+}
+
+.poem-english {
+  font-size: 0.95rem;
+  line-height: 2;
+  border-left: 2px solid rgba(31,42,68,0.3);
+  padding-left: 1.4rem;
+}
+
+.poem-arabic .stanza,
+.poem-english .stanza {
+  margin-bottom: 1.1rem;
+}
+
+.poem-arabic .bracket {
+  color: var(--faded);
+  font-size: 0.88em;
+}
+
+.poem-english .bracket {
+  color: var(--faded);
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+@media (max-width: 720px) {
+  .poem-wrap {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .poem-arabic {
+    border-right: none;
+    padding-right: 0;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 2rem;
+  }
+}
