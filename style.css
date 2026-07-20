@@ -5,6 +5,8 @@
   --indigo: #1F2A44;
   --faded: #6B6357;
   --rule: rgba(43, 43, 43, 0.22);
+  --ink-red: #B53C40;
+  --ink-red-deep: #943135;
 }
 
 @font-face {
@@ -96,7 +98,10 @@ main { margin-left: 84px; }
 }
 
 .hero .substrate img {
-  width: min(48vw, 860px);
+  max-width: min(48vw, 860px);
+  max-height: 88vh;
+  width: auto;
+  height: auto;
   opacity: 0.4;
 }
 
@@ -143,7 +148,7 @@ section { border-bottom: 1px solid var(--rule); }
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-size: 0.7rem;
-  color: var(--faded);
+  color: var(--ink-red-deep);
   margin-bottom: 0.8rem;
 }
 
@@ -170,7 +175,10 @@ section { border-bottom: 1px solid var(--rule); }
 }
 
 .entry-open .substrate img {
-  width: min(50vw, 820px);
+  max-width: min(50vw, 820px);
+  max-height: 88vh;
+  width: auto;
+  height: auto;
   opacity: 0.4;
 }
 
@@ -183,7 +191,7 @@ section { border-bottom: 1px solid var(--rule); }
   font-size: 0.7rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--faded);
+  color: var(--ink-red-deep);
 }
 
 .entry-open h2 {
@@ -245,7 +253,7 @@ footer {
 /* ---------- Mobile ---------- */
 @media (max-width: 720px) {
   .hero .substrate, .entry-open .substrate { width: 100%; }
-  .hero .substrate img, .entry-open .substrate img { width: 86vw; opacity: 0.3; }
+  .hero .substrate img, .entry-open .substrate img { max-width: 86vw; max-height: 78vh; width: auto; height: auto; opacity: 0.3; }
   nav {
     height: auto;
     width: 100%;
@@ -311,7 +319,7 @@ footer p + p { margin-top: 0.8rem; }
 
 .audio-btn .wave { transition: opacity 0.3s; opacity: 0.2; }
 
-.audio-btn.playing { color: var(--indigo); opacity: 1; border-color: rgba(31,42,68,0.3); }
+.audio-btn.playing { color: var(--ink-red-deep); opacity: 1; border-color: rgba(181,60,64,0.35); }
 
 .audio-btn.playing .wave { opacity: 1; }
 
@@ -408,4 +416,18 @@ footer p + p { margin-top: 0.8rem; }
     border-bottom: 1px solid var(--rule);
     padding-bottom: 2rem;
   }
+}
+
+/* ---------- Ink accents ---------- */
+::selection { background: rgba(181, 60, 64, 0.18); }
+
+/* Balance visual weight: solid words lighter, outline/pencil words stronger */
+.substrate img[src*="maqamat_hand"], .substrate img[src*="ataba_hand"] { opacity: 0.32; }
+.substrate img[src*="amanah_hand"], .substrate img[src*="tarjama_hand"] { opacity: 0.5; }
+.substrate img[src*="marifa_hand"] { opacity: 0.55; }
+
+@media (max-width: 760px) {
+  .substrate img[src*="maqamat_hand"], .substrate img[src*="ataba_hand"] { opacity: 0.24; }
+  .substrate img[src*="amanah_hand"], .substrate img[src*="tarjama_hand"] { opacity: 0.38; }
+  .substrate img[src*="marifa_hand"] { opacity: 0.42; }
 }
