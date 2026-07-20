@@ -8,6 +8,8 @@
   --ink-red: #B53C40;
   --ink-red-deep: #943135;
   --paper-shadow: rgba(74, 58, 44, 0.07);
+  --serif-display: 'EB Garamond', Georgia, serif;
+  --heading: #3B2E22;
 }
 
 @font-face {
@@ -15,6 +17,22 @@
   src: url('assets/fonts/amiri-arabic-400-normal.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('assets/fonts/eb-garamond-latin-400-normal.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('assets/fonts/eb-garamond-latin-500-normal.woff2') format('woff2');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('assets/fonts/eb-garamond-latin-400-italic.woff2') format('woff2');
+  font-weight: 400; font-style: italic; font-display: swap;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -140,10 +158,11 @@ section {
 }
 
 .prose h2 {
-  font-weight: 400;
-  font-size: 1.6rem;
+  font-family: var(--serif-display);
+  font-weight: 500;
+  font-size: 1.9rem;
   margin-bottom: 1.4rem;
-  color: var(--indigo);
+  color: var(--heading);
 }
 
 .prose p + p { margin-top: 1rem; }
@@ -199,9 +218,10 @@ section {
 }
 
 .entry-open h2 {
-  font-weight: 400;
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  color: var(--indigo);
+  font-family: var(--serif-display);
+  font-weight: 500;
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  color: var(--heading);
   margin: 0.4rem 0 0.2rem;
 }
 
@@ -222,10 +242,11 @@ section {
 .entry-body { max-width: 44rem; margin: 0 auto; padding: 0 clamp(1.5rem, 4vw, 3rem) 5rem; }
 
 .entry-body h3 {
+  font-family: var(--serif-display);
   font-weight: 400;
   font-style: italic;
-  font-size: 1.25rem;
-  color: var(--indigo);
+  font-size: 1.4rem;
+  color: var(--heading);
   margin: 2.8rem 0 0.8rem;
   padding-top: 2.2rem;
   border-top: 1px solid var(--rule);
