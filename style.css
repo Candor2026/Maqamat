@@ -97,7 +97,7 @@ main { margin-left: 84px; }
 
 .hero .substrate img {
   width: min(48vw, 860px);
-  opacity: 0.15;
+  opacity: 0.4;
 }
 
 .hero h1 {
@@ -171,7 +171,7 @@ section { border-bottom: 1px solid var(--rule); }
 
 .entry-open .substrate img {
   width: min(50vw, 820px);
-  opacity: 0.18;
+  opacity: 0.4;
 }
 
 .entry-open .opener {
@@ -245,7 +245,7 @@ footer {
 /* ---------- Mobile ---------- */
 @media (max-width: 720px) {
   .hero .substrate, .entry-open .substrate { width: 100%; }
-  .hero .substrate img, .entry-open .substrate img { width: 86vw; opacity: 0.12; }
+  .hero .substrate img, .entry-open .substrate img { width: 86vw; opacity: 0.3; }
   nav {
     height: auto;
     width: 100%;
@@ -318,6 +318,7 @@ footer p + p { margin-top: 0.8rem; }
 .audio-btn:disabled { cursor: default; }
 
 .hero .audio-btn { align-self: flex-start; }
+.entry-body .connection-btn { margin-top: 1.75rem; }
 
 /* ---------- Darwish closing ---------- */
 .closing {
